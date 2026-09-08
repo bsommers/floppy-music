@@ -1,0 +1,144 @@
+# ============================================================================
+#  STAR WARS THEME - performed by 3.5" AND 5.25" floppy drives
+#  floppytrack song file (.ftk)
+#
+#  Format:
+#    INSTRUMENT  BEATS  NOTE [VELOCITY]          relative (follows cursor)
+#    INSTRUMENT  AT START_BEAT  BEATS  NOTE [VEL]  absolute (layered voice)
+#
+#  Voices:
+#    head    - lead melody (square read/write head blip)
+#    motor/m35 - 3.5" drive motor bass (buzzy, brisk)
+#    m525    - 5.25" drive motor bass (deeper, lazier, boxier)
+#              both drive sizes can be mixed freely in the same song
+#    step    - stepper-motor tick (percussion)
+#    whir    - drive spin-up / spin-down
+#    beep    - bright counter blip
+# ============================================================================
+
+TEMPO 108
+
+# ---- drive spins up --------------------------------------------------------
+whir AT 0 2 rest
+# bass drone (D minor) on the big 5.25" machine - stately and heavy
+m525 AT 0 4 D2 0.9
+m525 AT 4 4 D2 0.9
+m525 AT 8 4 D2 0.9
+m525 AT 12 4 D2 0.9
+m525 AT 16 4 F2 0.9
+# stepper ticks on the downbeats
+step AT 0 0.5 rest
+step AT 4 0.5 rest
+step AT 8 0.5 rest
+step AT 12 0.5 rest
+step AT 16 0.5 rest
+
+# ---- section A: main title theme (D minor) -------------------------------
+# POLYPHONY: head/beep accept several notes on one line = a chord that
+# blips all at once (8-bit chiptune style), layered under the lead melody
+#  - D-minor-family stabs on the long notes:
+beep AT 0  1.8 D4 A4 D5 0.35
+beep AT 4  1.8 G3 D4 Bb4 0.35
+beep AT 5  1.8 A3 D4 F4 0.35
+beep AT 8  1.8 D4 A4 D5 0.40
+# lead line
+head AT 0  2  D5        0.9   #  "doo..."
+head AT 2  1  D5        0.8
+head AT 3  1  D5        0.9
+head AT 4  0.5 G5       0.7
+head AT 4.5 0.5 Bb5     0.8
+head AT 5  2  D5        0.9
+head AT 7  0.5 F5       0.7
+head AT 7.5 0.5 E5      0.7
+head AT 8  0.5 D5       0.9
+head AT 8.5 0.5 G4      0.6
+head AT 9  0.5 Bb4      0.7
+head AT 9.5 1  D5       0.9
+head AT 11 0.5 D5       0.8
+head AT 11.5 0.5 C5     0.7
+head AT 12 0.5 D5       0.8
+head AT 12.5 0.5 C5     0.7
+head AT 13 0.5 Bb4      0.7
+head AT 13.5 0.5 C5     0.7
+head AT 14 0.5 Bb4      0.7
+head AT 14.5 0.5 A4     0.7
+head AT 15 2  Bb4       0.9
+head AT 17 2  F4        0.9   #  cadence, hold
+
+# ---- section B: princess leia theme (C major) ----------------------------
+# bass roots on the snappy 3.5" drive, one per bar (both drives in the song!)
+m35 AT 20 4 C2 0.9
+m35 AT 24 4 C2 0.9
+m35 AT 28 4 F2 0.9
+m35 AT 32 4 G2 0.9
+m35 AT 36 4 C2 0.9
+m35 AT 40 4 C2 0.9
+# ... big 5.25" box drops in under the final run for extra weight:
+m525 AT 42 4 C2 0.55
+# stepper ticks
+step AT 24 0.5 rest
+step AT 28 0.5 rest
+step AT 32 0.5 rest
+step AT 36 0.5 rest
+step AT 40 0.5 rest
+# the big 5.25" box stomps on the downbeats of its own section
+step525 AT 20 0.5 rest
+step525 AT 40 0.5 rest
+# opening stab of section B + the FINAL C-major blowout (over both drives)
+beep AT 20 1.5 G3 D4 0.4
+beep AT 45 1.5 C4 E4 G4 0.6
+
+# the famous melody line (all eighth notes on a 0.5 beat grid)
+head AT 20  1.0 D5      0.9
+head AT 21  0.5 G5      0.7
+head AT 21.5 0.5 E5     0.7
+head AT 22  0.5 G5      0.8
+head AT 22.5 0.5 D5     0.9
+head AT 23  0.5 C5      0.7
+head AT 23.5 0.5 D5     0.8
+head AT 24  0.5 G5      0.8
+head AT 24.5 0.5 A5     0.8
+head AT 25  0.5 G5      0.8
+head AT 25.5 0.5 D5     0.9
+head AT 26  0.5 G5      0.7
+head AT 26.5 0.5 A5     0.8
+head AT 27  0.5 F5      0.8
+head AT 27.5 0.5 A5     0.8
+head AT 28  0.5 C6      0.9
+head AT 28.5 0.5 D6     0.9
+head AT 29  0.5 E6      0.9
+head AT 29.5 0.5 D6     0.8
+head AT 30  0.5 C6      0.9
+head AT 30.5 0.5 D6     0.8
+head AT 31  0.5 C5      0.8
+head AT 31.5 0.5 A5     0.7
+head AT 32  0.5 C6      0.9
+head AT 32.5 0.5 E6     0.8
+head AT 33  0.5 D6      0.8
+head AT 33.5 0.5 B5     0.8
+head AT 34  0.5 C6      0.9
+head AT 34.5 0.5 F6     0.9
+head AT 35  0.5 G6      0.9
+head AT 35.5 0.5 A6     0.9
+head AT 36  0.5 G6      0.8
+head AT 36.5 0.5 F6     0.9
+head AT 37  0.5 G6      0.9
+head AT 37.5 0.5 A6     0.8
+head AT 38  0.5 F6      0.8
+head AT 38.5 0.5 G6     0.9
+head AT 39  0.5 E6      0.8
+head AT 39.5 0.5 G6     0.8
+head AT 40  0.5 D6      0.9
+head AT 40.5 0.5 A5     0.8
+head AT 41  0.5 D6      0.9
+head AT 41.5 0.5 C6     0.8
+head AT 42  0.5 A5      0.8
+head AT 42.5 0.5 F5     0.8
+head AT 43  0.5 D6      0.9
+head AT 43.5 0.5 C6     0.8
+head AT 44  0.5 A5      0.8
+head AT 44.5 0.5 F5     0.8
+head AT 45  1.5 C5      0.9   #  final C - hold
+
+# ---- drive spins down ------------------------------------------------------
+whir AT 46.5 2 rest
